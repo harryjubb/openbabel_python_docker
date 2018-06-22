@@ -6,8 +6,8 @@ services:
   - docker
 
 before_install:
-  docker build -t harryjubb/openbabel:python3.6.5 .
+  docker build -t harryjubb/openbabel:python2.7.15 .
 
 script:
   # SMOKE TEST
-  - docker run --rm -it openbabel:python3.6.5 python -c 'import openbabel'
+  - docker run --rm -it openbabel:python2.7.15 python -c 'import openbabel'
