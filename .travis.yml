@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  docker build -t harryjubb/openbabel:python2.7.15 .
+  docker build -t openbabel:python2.7.15 .
 
 script:
   # SMOKE TEST
