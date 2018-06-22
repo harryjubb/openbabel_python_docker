@@ -17,8 +17,9 @@ RUN wget http://sourceforge.net/projects/openbabel/files/openbabel/2.4.0/openbab
 RUN tar -xzf openbabel-openbabel-2-4-0.tar.gz
 RUN mkdir build
 WORKDIR build
-RUN cmake ../openbabel-openbabel-2-4-0 -DRUN_SWIG=ON -DPYTHON_BINDINGS=ON
+RUN cmake ../openbabel-openbabel-2-4-0 -DRUN_SWIG=ON -DPYTHON_BINDINGS=ON -DENABLE_TESTS=ON
 RUN make
+RUN make test
 RUN make install
 ENV PYTHONPATH="/usr/local/lib"
 ENV LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
