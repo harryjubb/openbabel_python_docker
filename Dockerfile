@@ -13,11 +13,11 @@ RUN apt-get update && \
   && rm -rf /var/lib/apt/lists/*
 RUN mkdir /openbabel
 WORKDIR /openbabel
-RUN wget http://sourceforge.net/projects/openbabel/files/openbabel/2.4.0/openbabel-openbabel-2-4-0.tar.gz
-RUN tar -xzf openbabel-openbabel-2-4-0.tar.gz
+RUN wget http://sourceforge.net/projects/openbabel/files/openbabel/2.4.1/openbabel-2.4.1.tar.gz
+RUN tar -xzf openbabel-2.4.1.tar.gz
 RUN mkdir build
 WORKDIR build
-RUN cmake ../openbabel-openbabel-2-4-0 -DRUN_SWIG=ON -DPYTHON_BINDINGS=ON -DENABLE_TESTS=ON
+RUN cmake ../openbabel-2.4.1 -DRUN_SWIG=ON -DPYTHON_BINDINGS=ON -DENABLE_TESTS=ON
 RUN make
 RUN make test
 RUN make install
