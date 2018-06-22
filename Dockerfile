@@ -1,4 +1,4 @@
-FROM python:2.7.15
+FROM python:3.6.5
 LABEL maintainer="Harry Jubb<hj4@sanger.ac.uk>"
 
 # INSTALL OPENBABEL WITH PYTHON BINDINGS
